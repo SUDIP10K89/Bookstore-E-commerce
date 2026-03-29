@@ -1,0 +1,94 @@
+{
+  "placeholderImages": [
+    {
+      "id": "book-1",
+      "description": "Cover for To Kill a Mockingbird",
+      "imageUrl": "https://picsum.photos/seed/book1/400/600",
+      "imageHint": "book cover"
+    },
+    {
+      "id": "book-2",
+      "description": "Cover for 1984",
+      "imageUrl": "https://picsum.photos/seed/book2/400/600",
+      "imageHint": "book cover"
+    },
+    {
+      "id": "book-3",
+      "description": "Cover for The Great Gatsby",
+      "imageUrl": "https://picsum.photos/seed/book3/400/600",
+      "imageHint": "book cover"
+    },
+    {
+      "id": "book-4",
+      "description": "Cover for Pride and Prejudice",
+      "imageUrl": "https://picsum.photos/seed/book4/400/600",
+      "imageHint": "book cover"
+    },
+    {
+      "id": "book-5",
+      "description": "Cover for The Catcher in the Rye",
+      "imageUrl": "https://picsum.photos/seed/book5/400/600",
+      "imageHint": "book cover"
+    },
+    {
+      "id": "book-6",
+      "description": "Cover for The Hobbit",
+      "imageUrl": "https://picsum.photos/seed/book6/400/600",
+      "imageHint": "book cover"
+    },
+    {
+      "id": "book-7",
+      "description": "Cover for Dune",
+      "imageUrl": "https://picsum.photos/seed/book7/400/600",
+      "imageHint": "book cover"
+    },
+    {
+      "id": "book-8",
+      "description": "Cover for Brave New World",
+      "imageUrl": "https://picsum.photos/seed/book8/400/600",
+      "imageHint": "book cover"
+    },
+    {
+      "id": "book-9",
+      "description": "Cover for The Lord of the Rings",
+      "imageUrl": "https://picsum.photos/seed/book9/400/600",
+      "imageHint": "book cover"
+    },
+    {
+      "id": "book-10",
+      "description": "Cover for Fahrenheit 451",
+      "imageUrl": "https://picsum.photos/seed/book10/400/600",
+      "imageHint": "book cover"
+    },
+    {
+      "id": "book-11",
+      "description": "Cover for Moby Dick",
+      "imageUrl": "https://picsum.photos/seed/book11/400/600",
+      "imageHint": "book cover"
+    },
+    {
+      "id": "book-12",
+      "description": "Cover for War and Peace",
+      "imageUrl": "https://picsum.photos/seed/book12/400/600",
+      "imageHint": "book cover"
+    },
+    {
+      "id": "book-13",
+      "description": "Cover for The Hitchhiker's Guide to the Galaxy",
+      "imageUrl": "https://picsum.photos/seed/book13/400/600",
+      "imageHint": "book cover"
+    },
+    {
+      "id": "book-14",
+      "description": "Cover for The Chronicles of Narnia",
+      "imageUrl": "https://picsum.photos/seed/book14/400/600",
+      "imageHint": "book cover"
+    },
+    {
+      "id": "book-15",
+      "description": "Cover for The Alchemist",
+      "imageUrl": "https://picsum.photos/seed/book15/400/600",
+      "imageHint": "book cover"
+    }
+  ]
+}

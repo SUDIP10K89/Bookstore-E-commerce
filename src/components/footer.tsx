@@ -1,0 +1,96 @@
+import { BookOpen } from 'lucide-react';
+import Link from 'next/link';
+import { Button } from './ui/button';
+import { Input } from './ui/input';
+
+export function Footer() {
+  return (
+    <footer className="border-t bg-card">
+      <div className="container mx-auto px-4 md:px-6 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="flex flex-col gap-2">
+            <Link href="/" className="flex items-center gap-2 mb-2">
+              <BookOpen className="h-6 w-6 text-primary" />
+              <span className="font-bold text-lg font-headline">
+                LiteraryLane
+              </span>
+            </Link>
+            <p className="text-sm text-muted-foreground">
+              Your next favorite book is just a click away.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-3 font-headline">Shop</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/new-releases" className="text-muted-foreground hover:text-primary transition-colors">
+                  New Releases
+                </Link>
+              </li>
+              <li>
+                <Link href="/bestsellers" className="text-muted-foreground hover:text-primary transition-colors">
+                  Bestsellers
+                </Link>
+              </li>
+              <li>
+                <Link href="/genres" className="text-muted-foreground hover:text-primary transition-colors">
+                  Browse Genres
+                </Link>
+              </li>
+              <li>
+                <Link href="/collection" className="text-muted-foreground hover:text-primary transition-colors">
+                  Our Collection
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-3 font-headline">About</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors">
+                  Our Story
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors">
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">
+                  Return Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">
+                  FAQ
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-3 font-headline">Join Our Newsletter</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Get weekly book recommendations and stay up-to-date on new arrivals.
+            </p>
+            <form className="flex gap-2">
+              <Input type="email" placeholder="Your email" className="flex-1" />
+              <Button type="submit" className="bg-primary hover:bg-primary/90">Subscribe</Button>
+            </form>
+          </div>
+        </div>
+        <div className="border-t mt-8 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
+          <p>&copy; {new Date().getFullYear()} LiteraryLane. All rights reserved.</p>
+          <div className="flex gap-4 mt-4 md:mt-0">
+            <Link href="/" className="hover:text-foreground">Privacy Policy</Link>
+            <Link href="/" className="hover:text-foreground">Terms of Service</Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
