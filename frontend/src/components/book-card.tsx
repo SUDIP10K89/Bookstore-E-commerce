@@ -19,7 +19,7 @@ export function BookCard({ book }: BookCardProps) {
   const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
 
   return (
-    <Card className="overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1 h-full flex flex-col group">
+    <Card className="overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1 h-full flex flex-col group rounded-none border-2">
       <Link href={`/books/${book.id}`} className="block overflow-hidden">
         <Image
           src={book.coverImage}
@@ -49,7 +49,7 @@ export function BookCard({ book }: BookCardProps) {
         </div>
         <div className="flex items-center justify-between mt-auto pt-2">
           <p className="font-bold text-lg">${book.price.toFixed(2)}</p>
-          <Button size="icon" variant="outline" onClick={() => addToCart(book)} aria-label={`Add ${book.title} to cart`}>
+          <Button size="icon" variant="outline" onClick={() => addToCart(book)} aria-label={`Add ${book.title} to cart`} className="rounded-sm border-2">
             <ShoppingCart className="h-5 w-5" />
           </Button>
         </div>

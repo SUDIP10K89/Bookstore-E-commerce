@@ -14,7 +14,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { Input } from '@/components/ui/input';
-import { Search, ArrowRight, Sparkles, TrendingUp, Award } from 'lucide-react';
+import { Search, ArrowRight, Sparkles, TrendingUp, Award, BookMarked, Filter, Heart, Sword, Tag, BookOpen, Clock } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Card, CardHeader, CardTitle } from '@/components/ui/card';
 import { Recommendations } from '@/components/recommendations';
@@ -52,11 +52,11 @@ function HeroSection() {
       <div className="absolute bottom-40 left-20 w-1.5 h-1.5 bg-primary/20 rounded-full animate-pulse delay-500 z-30"></div>
       
       <div className="relative z-30 p-4 sm:p-6 md:p-8 max-w-4xl mx-auto">
-        <div className="mb-6 inline-flex items-center gap-2 bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-full px-4 py-2 text-sm text-primary">
+        <div className="mb-6 inline-flex items-center gap-2 bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-sm px-4 py-2 text-sm text-primary">
           <Sparkles className="h-4 w-4" />
           Your Literary Journey Begins Here
         </div>
-        
+
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-headline font-bold text-white leading-[0.9] tracking-tight mb-6">
           Where will your
           <span className="block bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
@@ -64,15 +64,15 @@ function HeroSection() {
           </span>
           take you?
         </h1>
-        
+
         <p className="mt-8 text-xl md:text-2xl text-slate-200 max-w-2xl mx-auto leading-relaxed">
           Discover timeless classics, modern masterpieces, and hidden gems. Your next great adventure is just a page away.
         </p>
-        
+
         <div className="mt-12 max-w-2xl mx-auto flex flex-col items-center gap-6">
-          <form onSubmit={handleSearch} className="flex w-full items-center gap-3 bg-white/95 backdrop-blur-md p-3 rounded-2xl shadow-2xl border border-white/20">
+          <form onSubmit={handleSearch} className="flex w-full items-center gap-3 bg-white/95 backdrop-blur-md p-3 rounded-none shadow-2xl border-2 border-white/20">
             <div className="flex items-center gap-3 flex-1">
-              <div className="p-2 rounded-xl bg-primary/10">
+              <div className="p-2 rounded-sm bg-primary/10">
                 <Search className="h-5 w-5 text-primary" />
               </div>
               <Input
@@ -83,30 +83,30 @@ function HeroSection() {
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
-            <Button 
-              type="submit" 
-              size="lg" 
-              className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white rounded-xl px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            <Button
+              type="submit"
+              size="lg"
+              className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white rounded-sm px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               Discover
             </Button>
           </form>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 items-center">
-            <Button 
-              asChild 
-              variant="outline" 
-              size="lg" 
-              className="rounded-xl bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm px-6"
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="rounded-none bg-white/10 border-2 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm px-6"
             >
               <Link href="/collection">
                 Explore Collection <ArrowRight className="ml-2 h-4 w-4"/>
               </Link>
             </Button>
-            
+
             <div className="flex items-center gap-6 text-sm text-slate-300">
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 bg-green-400 rounded-none animate-pulse"></div>
                 10k+ Books
               </div>
               <div className="flex items-center gap-2">
@@ -148,21 +148,20 @@ function FeaturedBooksCarousel() {
       <div className="flex items-center justify-between mb-12">
         <div className="space-y-2">
           <div className="flex items-center gap-3">
-            
             <h2 className="text-4xl font-headline font-bold text-foreground">
               Reader Favorites
             </h2>
           </div>
           <p className="text-muted-foreground text-lg">Books our community can't put down</p>
         </div>
-        
-        <Button 
-          variant="outline" 
-          asChild 
-          className="rounded-xl border-2 hover:bg-primary/5 hover:border-primary/30 transition-all duration-300"
+
+        <Button
+          variant="outline"
+          asChild
+          className="rounded-none border-2 hover:bg-primary/5 hover:border-primary/30 transition-all duration-300"
         >
           <Link href="/bestsellers">
-            View All Bestsellers 
+            View All Bestsellers
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </Button>
@@ -188,8 +187,8 @@ function FeaturedBooksCarousel() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="rounded-xl shadow-lg border-2" />
-          <CarouselNext className="rounded-xl shadow-lg border-2" />
+          <CarouselPrevious className="rounded-none shadow-lg border-2" />
+          <CarouselNext className="rounded-none shadow-lg border-2" />
         </Carousel>
       </div>
     </section>
@@ -198,16 +197,16 @@ function FeaturedBooksCarousel() {
 
 function GenreHighlights() {
     const highlightedGenres = genres.slice(0, 4);
-    
-    const genreIcons = ['📚', '🔍', '❤️', '⚔️'];
-    
+
+    const genreIcons = [BookMarked, Filter, Heart, Sword];
+
     return (
         <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
             {/* Background pattern */}
             <div className="absolute inset-0 opacity-5">
                 <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(68,68,68,.1)_50%,transparent_75%,transparent_100%)] bg-[length:60px_60px]"></div>
             </div>
-            
+
             <div className="container mx-auto px-4 md:px-6 py-16 md:py-20 relative">
                 <div className="flex items-center justify-between mb-12">
                     <div className="space-y-2">
@@ -216,40 +215,43 @@ function GenreHighlights() {
                         </h2>
                         <p className="text-muted-foreground text-lg">Find your perfect literary adventure</p>
                     </div>
-                    
-                    <Button 
-                        variant="outline" 
-                        asChild 
-                        className="rounded-xl border-2 hover:bg-primary/5 hover:border-primary/30 transition-all duration-300"
+
+                    <Button
+                        variant="outline"
+                        asChild
+                        className="rounded-none border-2 hover:bg-primary/5 hover:border-primary/30 transition-all duration-300"
                     >
                         <Link href="/genres">
-                            All Genres 
+                            All Genres
                             <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
                     </Button>
                 </div>
-                
+
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-                    {highlightedGenres.map((genre, index) => (
-                        <Link 
-                            href={`/genre/${genre.toLowerCase().replace(/ /g, '-')}`} 
-                            key={genre}
-                            className="group"
-                        >
-                            <Card className="relative overflow-hidden hover:shadow-xl transition-all duration-500 ease-out transform hover:-translate-y-2 hover:rotate-1 h-full border-2 hover:border-primary/20 bg-gradient-to-br from-white via-white to-slate-50/50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
-                                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                
-                                <CardHeader className="relative text-center p-8">
-                                    <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
-                                        {genreIcons[index]}
-                                    </div>
-                                    <CardTitle className="font-headline text-xl group-hover:text-primary transition-colors duration-300">
-                                        {genre}
-                                    </CardTitle>
-                                </CardHeader>
-                            </Card>
-                        </Link>
-                    ))}
+                    {highlightedGenres.map((genre, index) => {
+                        const IconComponent = genreIcons[index];
+                        return (
+                            <Link
+                                href={`/genre/${genre.toLowerCase().replace(/ /g, '-')}`}
+                                key={genre}
+                                className="group"
+                            >
+                                <Card className="relative overflow-hidden hover:shadow-xl transition-all duration-500 ease-out transform hover:-translate-y-2 hover:rotate-1 h-full border-2 hover:border-primary/20 bg-gradient-to-br from-white via-white to-slate-50/50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-none">
+                                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                                    <CardHeader className="relative text-center p-8">
+                                        <div className="inline-flex justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                                            <IconComponent className="h-10 w-10 text-primary" />
+                                        </div>
+                                        <CardTitle className="font-headline text-xl group-hover:text-primary transition-colors duration-300">
+                                            {genre}
+                                        </CardTitle>
+                                    </CardHeader>
+                                </Card>
+                            </Link>
+                        );
+                    })}
                 </div>
             </div>
         </section>
@@ -259,49 +261,58 @@ function GenreHighlights() {
 function PromotionalBanner() {
     return (
         <section className="container mx-auto px-4 md:px-6 py-16 md:py-20">
-            <div className="relative overflow-hidden bg-gradient-to-r from-primary via-primary/90 to-primary/80 text-white rounded-3xl shadow-2xl">
+            <div className="relative overflow-hidden bg-gradient-to-r from-primary via-primary/90 to-primary/80 text-white rounded-none shadow-2xl border-2 border-primary">
                 {/* Background pattern */}
                 <div className="absolute inset-0 opacity-10">
                     <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,.1)_50%,transparent_75%,transparent_100%)] bg-[length:40px_40px]"></div>
                 </div>
-                
+
                 {/* Floating elements */}
-                <div className="absolute top-6 right-8 w-3 h-3 bg-white/20 rounded-full animate-pulse"></div>
-                <div className="absolute bottom-8 right-16 w-2 h-2 bg-white/30 rounded-full animate-pulse delay-1000"></div>
-                <div className="absolute top-12 right-24 w-1 h-1 bg-white/40 rounded-full animate-pulse delay-500"></div>
-                
+                <div className="absolute top-6 right-8 w-3 h-3 bg-white/20 rounded-none animate-pulse"></div>
+                <div className="absolute bottom-8 right-16 w-2 h-2 bg-white/30 rounded-none animate-pulse delay-1000"></div>
+                <div className="absolute top-12 right-24 w-1 h-1 bg-white/40 rounded-none animate-pulse delay-500"></div>
+
                 <div className="relative p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
                     <div className="text-center md:text-left space-y-4 flex-1">
-                        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-sm">
+                        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-sm px-4 py-2 text-sm">
                             <Sparkles className="h-4 w-4" />
                             Limited Time Offer
                         </div>
-                        
+
                         <h2 className="text-4xl md:text-5xl font-headline font-bold leading-tight">
                             Summer Reading
                             <span className="block">Sale!</span>
                         </h2>
-                        
+
                         <p className="text-xl text-white/90 max-w-xl leading-relaxed">
                             Fresh stories for sunny days. Get up to 30% off on selected titles and discover your next page-turner.
                         </p>
-                        
-                        <div className="flex items-center gap-4 pt-2">
-                            <div className="text-sm text-white/80">🏷️ Up to 30% off</div>
-                            <div className="text-sm text-white/80">📚 100+ titles</div>
-                            <div className="text-sm text-white/80">⏰ Ends soon</div>
+
+                        <div className="flex items-center gap-4 pt-2 flex-wrap">
+                            <div className="flex items-center gap-2 text-sm text-white/80">
+                                <Tag className="h-4 w-4" />
+                                Up to 30% off
+                            </div>
+                            <div className="flex items-center gap-2 text-sm text-white/80">
+                                <BookOpen className="h-4 w-4" />
+                                100+ titles
+                            </div>
+                            <div className="flex items-center gap-2 text-sm text-white/80">
+                                <Clock className="h-4 w-4" />
+                                Ends soon
+                            </div>
                         </div>
                     </div>
-                    
+
                     <div className="flex-shrink-0">
-                        <Button 
-                            variant="secondary" 
-                            size="lg" 
-                            asChild 
-                            className="bg-white text-primary hover:bg-white/90 rounded-xl px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                        <Button
+                            variant="secondary"
+                            size="lg"
+                            asChild
+                            className="bg-white text-primary hover:bg-white/90 rounded-sm px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                         >
                             <Link href="/collection?filter=sale">
-                                Shop the Sale 
+                                Shop the Sale
                                 <ArrowRight className="ml-2 h-5 w-5"/>
                             </Link>
                         </Button>

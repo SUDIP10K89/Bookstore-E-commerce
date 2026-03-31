@@ -5,7 +5,7 @@ import { Input } from './ui/input';
 
 export function Footer() {
   return (
-    <footer className="border-t bg-card">
+    <footer className="border-t-2 bg-card">
       <div className="container mx-auto px-4 md:px-6 py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="flex flex-col gap-2">
@@ -78,8 +78,8 @@ export function Footer() {
               Get weekly book recommendations and stay up-to-date on new arrivals.
             </p>
             <form className="flex gap-2">
-              <Input type="email" placeholder="Your email" className="flex-1" />
-              <Button type="submit" className="bg-primary hover:bg-primary/90">Subscribe</Button>
+              <Input type="email" placeholder="Your email" className="flex-1 rounded-sm border-2" />
+              <Button type="submit" className="bg-primary hover:bg-primary/90 rounded-sm">Subscribe</Button>
             </form>
           </div>
         </div>

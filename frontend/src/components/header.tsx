@@ -27,7 +27,7 @@ export function Header() {
   const { cartItems, cartCount, cartTotal, removeFromCart, updateQuantity } = useCart();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b-2 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <BookOpen className="h-6 w-6 text-primary" />
@@ -45,12 +45,12 @@ export function Header() {
         <div className="flex items-center justify-end gap-2">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="relative">
+              <Button variant="ghost" size="icon" className="relative rounded-sm">
                 <ShoppingCart className="h-5 w-5" />
                 {cartCount > 0 && (
                   <Badge
                     variant="destructive"
-                    className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full p-0"
+                    className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-none p-0"
                   >
                     {cartCount}
                   </Badge>
@@ -58,7 +58,7 @@ export function Header() {
                 <span className="sr-only">Open cart</span>
               </Button>
             </SheetTrigger>
-            <SheetContent className="flex w-full flex-col sm:max-w-md">
+            <SheetContent className="flex w-full flex-col sm:max-w-md rounded-none">
               <SheetHeader>
                 <SheetTitle>Your Cart ({cartCount})</SheetTitle>
               </SheetHeader>
@@ -74,7 +74,7 @@ export function Header() {
                             alt={book.title}
                             width={80}
                             height={120}
-                            className="rounded-md object-cover"
+                            className="rounded-none object-cover border"
                             data-ai-hint="book cover"
                           />
                           <div className="flex-1">
@@ -84,16 +84,16 @@ export function Header() {
                             </p>
                             <div className="flex items-center justify-between mt-2">
                               <div className="flex items-center gap-2">
-                                <Button variant="outline" size="icon" className="h-7 w-7" onClick={() => updateQuantity(book.id, quantity - 1)}><span className='sr-only'>Decrease quantity</span>-</Button>
+                                <Button variant="outline" size="icon" className="h-7 w-7 rounded-sm border-2" onClick={() => updateQuantity(book.id, quantity - 1)}><span className='sr-only'>Decrease quantity</span>-</Button>
                                 <span>{quantity}</span>
-                                <Button variant="outline" size="icon" className="h-7 w-7" onClick={() => updateQuantity(book.id, quantity + 1)}><span className='sr-only'>Increase quantity</span>+</Button>
+                                <Button variant="outline" size="icon" className="h-7 w-7 rounded-sm border-2" onClick={() => updateQuantity(book.id, quantity + 1)}><span className='sr-only'>Increase quantity</span>+</Button>
                               </div>
                               <p className="font-semibold">
                                 ${(book.price * quantity).toFixed(2)}
                               </p>
                             </div>
                           </div>
-                          <Button variant="ghost" size="icon" className="h-7 w-7 text-muted-foreground" onClick={() => removeFromCart(book.id)}>
+                          <Button variant="ghost" size="icon" className="h-7 w-7 text-muted-foreground rounded-sm" onClick={() => removeFromCart(book.id)}>
                             <X className="h-4 w-4" />
                             <span className="sr-only">Remove item</span>
                           </Button>
@@ -108,7 +108,7 @@ export function Header() {
                       <span>${cartTotal.toFixed(2)}</span>
                     </div>
                     <SheetClose asChild>
-                      <Button asChild size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                      <Button asChild size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 rounded-sm">
                         <Link href="/checkout">Proceed to Checkout</Link>
                       </Button>
                     </SheetClose>
@@ -119,13 +119,13 @@ export function Header() {
                   <ShoppingCart className="h-16 w-16 text-muted-foreground" />
                   <p className="text-muted-foreground">Your cart is empty.</p>
                   <SheetClose asChild>
-                    <Button variant="outline">Continue Shopping</Button>
+                    <Button variant="outline" className="rounded-sm border-2">Continue Shopping</Button>
                   </SheetClose>
                 </div>
               )}
             </SheetContent>
           </Sheet>
-          <Button variant="ghost" size="icon" asChild>
+          <Button variant="ghost" size="icon" asChild className="rounded-sm">
             <Link href="/account">
               <User className="h-5 w-5" />
               <span className="sr-only">User account</span>
@@ -133,12 +133,12 @@ export function Header() {
           </Button>
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
+              <Button variant="ghost" size="icon" className="md:hidden rounded-sm">
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left">
+            <SheetContent side="left" className="rounded-none">
                 <SheetHeader>
                   <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                 </SheetHeader>
